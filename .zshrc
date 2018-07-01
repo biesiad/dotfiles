@@ -28,3 +28,5 @@ alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm 
 alias dsc="docker-sync clean"
 alias dst="docker-sync start --foreground"
 alias dss="docker-sync stop"
+
+export GIT_CEILING_DIRECTORIES=$HOME
