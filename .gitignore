@@ -1,0 +1,9 @@
+*
+!.gitignore
+!.vimrc
+!.gitconfig
+!.gitignore_global
+!.tigrc
+!.tmux.conf
+!.zshrc
+!crontab

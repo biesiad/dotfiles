@@ -1,0 +1,23 @@
+bind generic + !git commit --amend
+
+bind main P !git push
+bind main p !git pull
+
+bind main r !git rebase -i %(commit)
+
+bind stash A !?git stash apply %(stash)
+bind stash D !?git stash drop %(stash)
+bind status S !?git stash save --keep-index %
+
+bind status D !@?rm %(file)
+
+bind main T !@git tag %(prompt) %(commit)
+
+# open commit on github
+bind generic G @sh -c "open 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'"
+
+# Add selected file to .gitignore and open vim for additional changes
+bind status <Ctrl-r> !sh -c "echo %(file) >> .gitignore && vi .gitignore"
+
+set status-show-untracked-dirs = yes
+set status-show-untracked-files = yes

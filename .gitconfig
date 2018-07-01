@@ -1,0 +1,46 @@
+[user]
+        name = Grzegorz Biesiadecki
+        email = gbiesiadecki@gmail.com
+[push]
+        default = current
+[core]
+        excludesfile = ~/.gitignore_global
+;       added start
+        trustctime = false
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+        editor = vim
+;       added end
+[branch]
+        autosetupmerge = true
+        remote = origin
+[color]
+        ui = true
+        diff = true
+        grep = true
+        branch = true
+        showbranch = true
+        status = true
+[color "diff"]
+        plain = normal dim
+        meta = yellow dim
+        frag = blue bold
+        old = magenta
+        new = cyan
+        whitespace = red reverse
+[color "status"]
+        header = normal dim
+        added = yellow
+        untracked = magenta
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = red
+[merge]
+        tool = opendiff
+[filter "lfs"]
+        clean = git lfs clean %f
+        smudge = git lfs smudge %f
+        required = true
