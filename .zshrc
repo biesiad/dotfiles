@@ -1,3 +1,13 @@
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme awesomepanda
+antigen apply
+
+bindkey "^[^[[D" backward-word
+bindkey "^[^[[C" forward-word
+
 COMPLETION_WAITING_DOTS="true"
 
 export PATH="/usr/local/bin:$PATH"
@@ -30,3 +40,4 @@ alias dst="docker-sync start --foreground"
 alias dss="docker-sync stop"
 
 export GIT_CEILING_DIRECTORIES=$HOME
+
