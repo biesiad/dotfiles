@@ -1,8 +1,9 @@
-source /usr/local/share/antigen/antigen.zsh
+source /usr/share/zsh-antigen/antigen.zsh
 
 antigen use oh-my-zsh
+antigen theme kolo
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen theme awesomepanda
+antigen bundle git
 antigen apply
 
 bindkey "^[^[[D" backward-word
@@ -27,7 +28,6 @@ alias dcu="docker-compose up"
 alias dce="docker-compose exec"
 alias dcd="docker-compose down"
 alias dcb="docker-compose build"
-alias awslogin="$(aws ecr get-login --region us-east-1)"
 alias httpserver="ruby -run -ehttpd . -p8000"
 alias grh="git reset --hard"
 alias gcm="git checkout master"

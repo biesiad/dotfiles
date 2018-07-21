@@ -6,7 +6,7 @@ set guioptions-=r
 
 syntax enable
 
-set belloff=all
+" set belloff=all
 
 imap jj <Esc>
 
