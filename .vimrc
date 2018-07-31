@@ -8,7 +8,7 @@ syntax enable
 
 set belloff=all
 
-imap jj <Esc>
+" imap jj <Esc>
 
 " mouse scroll in terminal
 set mouse=n
