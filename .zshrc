@@ -1,4 +1,9 @@
-source /usr/share/zsh-antigen/antigen.zsh
+if [[ $(uname) == Darwin ]]; then
+  source /usr/local/share/antigen/antigen.zsh
+else
+  source /usr/share/zsh-antigen/antigen.zsh
+fi
+
 
 antigen use oh-my-zsh
 antigen theme kolo
