@@ -4,7 +4,6 @@ else
   source /usr/share/zsh-antigen/antigen.zsh
 fi
 
-
 antigen use oh-my-zsh
 antigen theme kolo
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -16,10 +15,13 @@ bindkey "^[^[[C" forward-word
 
 COMPLETION_WAITING_DOTS="true"
 
+export PATH="$HOME/Library/Python/3.6/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
 export EDITOR=vim
 export GIT_EDITOR=vim
+export GIT_CEILING_DIRECTORIES=$HOME
 
 alias ll="ls -l"
 alias la="ls -a"
@@ -44,5 +46,7 @@ alias dsc="docker-sync clean"
 alias dst="docker-sync start --foreground"
 alias dss="docker-sync stop"
 
-export GIT_CEILING_DIRECTORIES=$HOME
-
+if [ -f ~/.figureeightrc ]
+then
+  source ~/.figureeightrc
+fi
