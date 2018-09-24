@@ -7,7 +7,6 @@ fi
 antigen use oh-my-zsh
 antigen theme kolo
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle git
 antigen apply
 
@@ -54,3 +53,13 @@ if [ -f ~/.figureeightrc ]
 then
   source ~/.figureeightrc
 fi
+
+git_delete_all_branches() {
+    for branch in $(git branch | grep -v "*" | grep -v "master" | grep -v "sandbox"); do
+        echo -n "Delete $branch? [y/N] "
+        read answer
+        if [[ $answer == 'y' ]]; then
+            git branch -D $branch
+        fi
+    done
+}
