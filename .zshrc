@@ -34,6 +34,7 @@ alias rr="bundle exec rake routes"
 alias be="bundle exec"
 alias bi="bundle install"
 alias gcl='git clean -f `git rev-parse --show-toplevel`'
+alias glf='git_pull_force'
 alias dcu="docker-compose up"
 alias dce="docker-compose exec"
 alias dcd="docker-compose down"
@@ -62,4 +63,8 @@ git_delete_all_branches() {
             git branch -D $branch
         fi
     done
+}
+git_pull_force() {
+    branch=${1:-$(git branch | grep "*" | cut -c3-)}
+    git pull origin +$branch:$branch
 }
