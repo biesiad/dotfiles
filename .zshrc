@@ -15,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-
+export PATH="$HOME/Bin/:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if [[ $(command -v rbenv) ]]; then
     eval "$(rbenv init -)"
