@@ -15,11 +15,10 @@ COMPLETION_WAITING_DOTS="true"
 
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/Bin/:$PATH"
+export PATH="$HOME/Projects/bin/:$PATH"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
-if [[ $(command -v rbenv) ]]; then
-    eval "$(rbenv init -)"
-fi
+if [[ $(command -v rbenv) ]]; then eval "$(rbenv init -)"; fi
 
 export EDITOR=vim
 export GIT_EDITOR=vim
@@ -48,11 +47,13 @@ alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm 
 alias dsc="docker-sync clean"
 alias dst="docker-sync start --foreground"
 alias dss="docker-sync stop"
+alias notes="cd $HOME/Projects/Notes"
 
-if [ -f ~/.figureeightrc ]
-then
-  source ~/.figureeightrc
-fi
+if [ -f ~/.figureeightrc ]; then source ~/.figureeightrc; fi
+
+export branch() {
+    git branch | grep "*" | cut -c3-
+}
 
 git_delete_all_branches() {
     for branch in $(git branch | grep -v "*" | grep -v "master" | grep -v "sandbox"); do
@@ -63,6 +64,7 @@ git_delete_all_branches() {
         fi
     done
 }
+
 git_pull_force() {
     branch=${1:-$(git branch | grep "*" | cut -c3-)}
     git pull origin +$branch:$branch
