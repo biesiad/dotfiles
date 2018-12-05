@@ -6,4 +6,4 @@
 !.tigrc
 !.tmux.conf
 !.zshrc
-!crontab
+!.emacs.d/init.el

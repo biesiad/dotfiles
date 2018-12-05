@@ -20,9 +20,11 @@ export PATH="$HOME/Projects/bin/:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if [[ $(command -v rbenv) ]]; then eval "$(rbenv init -)"; fi
 
-export EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR=emacs
+export GIT_EDITOR=emacs
 export GIT_CEILING_DIRECTORIES=$HOME
+
+export NOTES=~/Notes
 
 alias ll="ls -l"
 alias la="ls -a"
@@ -47,7 +49,7 @@ alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm 
 alias dsc="docker-sync clean"
 alias dst="docker-sync start --foreground"
 alias dss="docker-sync stop"
-alias notes="cd $HOME/Projects/Notes"
+alias notes="cd $NOTES"
 
 if [ -f ~/.figureeightrc ]; then source ~/.figureeightrc; fi
 
