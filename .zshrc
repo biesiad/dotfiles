@@ -50,6 +50,7 @@ alias dsc="docker-sync clean"
 alias dst="docker-sync start --foreground"
 alias dss="docker-sync stop"
 alias notes="cd $NOTES"
+alias gmaster="git checkout master"
 
 if [ -f ~/.figureeightrc ]; then source ~/.figureeightrc; fi
 

@@ -3,7 +3,7 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
     "workbench.sideBar.location": "right",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
@@ -16,5 +16,6 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.defaultDateStyle": "absolute",
-    "prettier.printWidth": 80
+    "prettier.printWidth": 80,
+    "python.pythonPath": "/usr/local/bin/python"
 }
