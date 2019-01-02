@@ -1,11 +1,5 @@
-(global-set-key (kbd "C-j") 'backward-kill-word)
-(global-set-key (kbd "M-[") 'hs-hide-block)
-(global-set-key (kbd "M-]") 'hs-show-block)
-
-(require 'ido)
-(ido-mode t)
-
 (require 'package)
+
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
@@ -24,19 +18,26 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-(load (expand-file-name "~/.quicklisp/slime-helper.el"))
-;; Replace "sbcl" with the path to your implementation
-(setq inferior-lisp-program "sbcl")
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(package-selected-packages (quote (slime))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(ido-mode 1)
+
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
+
+(global-set-key (kbd "C-j") 'backward-kill-word)
+(global-set-key (kbd "M-[") 'hs-hide-block)
+(global-set-key (kbd "M-]") 'hs-show-block)
+
+
