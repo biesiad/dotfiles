@@ -39,6 +39,7 @@ alias dcu="docker-compose up"
 alias dce="docker-compose exec"
 alias dcd="docker-compose down"
 alias dcb="docker-compose build"
+alias dcd="docker-compose run"
 alias httpserver="ruby -run -ehttpd . -p8000"
 alias grh="git reset --hard"
 alias gcm="git checkout master"
@@ -72,3 +73,5 @@ git_pull_force() {
     branch=${1:-$(git branch | grep "*" | cut -c3-)}
     git pull origin +$branch:$branch
 }
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

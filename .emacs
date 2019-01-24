@@ -32,6 +32,7 @@ There are two things you can do about this warning:
  )
 
 (ido-mode 1)
+(show-paren-mode 1)
 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 (setq slime-contribs '(slime-fancy))
@@ -39,5 +40,10 @@ There are two things you can do about this warning:
 (global-set-key (kbd "C-j") 'backward-kill-word)
 (global-set-key (kbd "M-[") 'hs-hide-block)
 (global-set-key (kbd "M-]") 'hs-show-block)
+
+
+
+
+
 
 
