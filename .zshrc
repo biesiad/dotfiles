@@ -37,6 +37,7 @@ alias gcl='git clean -f `git rev-parse --show-toplevel`'
 alias glf='git_pull_force'
 alias dcu="docker-compose up"
 alias dce="docker-compose exec"
+alias dcr="docker-compose run --rm"
 alias dcd="docker-compose down"
 alias dcb="docker-compose build"
 alias dcd="docker-compose run"
@@ -75,3 +76,4 @@ git_pull_force() {
 }
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/bin:$PATH"
