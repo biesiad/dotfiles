@@ -35,6 +35,7 @@ alias be="bundle exec"
 alias bi="bundle install"
 alias gcl='git clean -f `git rev-parse --show-toplevel`'
 alias glf='git_pull_force'
+alias gco='git checkout'
 alias dcu="docker-compose up"
 alias dce="docker-compose exec"
 alias dcr="docker-compose run --rm"
@@ -55,6 +56,10 @@ alias notes="cd $NOTES"
 alias gmaster="git checkout master"
 
 if [ -f ~/.figureeightrc ]; then source ~/.figureeightrc; fi
+
+export fco() {
+  git checkout $(git branch | fzf --height=7 --query=$1 --layout=reverse --inline-info)
+}
 
 export branch() {
     git branch | grep "*" | cut -c3-
