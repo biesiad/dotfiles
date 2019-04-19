@@ -38,12 +38,6 @@ There are two things you can do about this warning:
 (setq slime-contribs '(slime-fancy))
 
 (global-set-key (kbd "C-j") 'backward-kill-word)
-(global-set-key (kbd "M-[") 'hs-hide-block)
-(global-set-key (kbd "M-]") 'hs-show-block)
-
-
-
-
-
-
+;; (global-set-key (kbd "M-[") 'hs-hide-block)
+;; (global-set-key (kbd "M-]") 'hs-show-block)
 
