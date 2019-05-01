@@ -11,8 +11,7 @@ export GIT_CEILING_DIRECTORIES=$HOME
 
 . ~/.git_prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\w$(__git_ps1 " (%s)")\$ '
-
+export PS1='\W$(__git_ps1 " (%s)")\$ '
 
 alias ll="ls -l"
 alias la="ls -a"
