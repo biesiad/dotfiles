@@ -5,5 +5,7 @@
 !.gitignore_global
 !.tigrc
 !.tmux.conf
+!.git_prompt.sh
+!.bash_profile
 !.zshrc
 !.emacs

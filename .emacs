@@ -35,9 +35,8 @@ There are two things you can do about this warning:
 (show-paren-mode 1)
 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
+;; (setq inferior-lisp-program "/Users/gbiesiadecki/Downloads/ccl/dx86cl64")
+
 (setq slime-contribs '(slime-fancy))
 
 (global-set-key (kbd "C-j") 'backward-kill-word)
-;; (global-set-key (kbd "M-[") 'hs-hide-block)
-;; (global-set-key (kbd "M-]") 'hs-show-block)
-
