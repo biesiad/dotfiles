@@ -9,12 +9,14 @@ export EDITOR=emacs
 export GIT_EDITOR=emacs
 export GIT_CEILING_DIRECTORIES=$HOME
 
-. ~/.git-completion.bash
-. ~/.git_prompt.sh
+if [[ $0 == '-bash' ]]; then
+  . ~/.git-completion.bash
+  . ~/.git_prompt.sh
 
-export GIT_PS1_SHOWDIRTYSTATE=1
-PROMPT_COMMAND='PS1X=$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'
-export PS1='${PS1X}$(__git_ps1 " (%s)")\$ '
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  PROMPT_COMMAND='PS1X=$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'
+  export PS1='${PS1X}$(__git_ps1 " (%s)")\$ '
+fi
 
 alias ll="ls -l"
 alias la="ls -a"
@@ -60,15 +62,15 @@ alias dss="docker-sync stop"
 alias httpserver="ruby -run -ehttpd . -p8000"
 alias ppjson="python -m json.tool | highlight"
 
-if [ -f ~/.figureeightrc ]; then
-  source ~/.figureeightrc;
-fi
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -f ~/.figureeightrc ]; then
+  source ~/.figureeightrc;
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/gbiesiadecki/.sdkman"
