@@ -10,12 +10,14 @@ export GIT_EDITOR=emacs
 export GIT_CEILING_DIRECTORIES=$HOME
 
 if [[ $0 == '-bash' ]]; then
-  . ~/.git-completion.bash
-  . ~/.git_prompt.sh
+    if [[ -f /usr/local/etc/bash_completion.d/pass ]]; then . /usr/local/etc/bash_completion.d/pass; fi
+    
+    . ~/.git-completion.bash
+    . ~/.git_prompt.sh
 
-  export GIT_PS1_SHOWDIRTYSTATE=1
-  PROMPT_COMMAND='PS1X=$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'
-  export PS1='${PS1X}$(__git_ps1 " (%s)")\$ '
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    PROMPT_COMMAND='PS1X=$(p="${PWD#${HOME}}"; [ "${PWD}" != "${p}" ] && printf "~";IFS=/; for q in ${p:1}; do printf /${q:0:1}; done; printf "${q:1}")'
+    export PS1='${PS1X}$(__git_ps1 " (%s)")\$ '
 fi
 
 alias ll="ls -l"
@@ -30,7 +32,7 @@ alias bi="bundle install"
 alias gst="git status"
 alias gco='git checkout'
 gcof () {
-  git checkout $(git branch | fzf --height=7 --query=$1 --layout=reverse --inline-info)
+    git checkout $(git branch | fzf --height=7 --query=$1 --layout=reverse --inline-info)
 }
 alias gcl='git clean -f `git rev-parse --show-toplevel`'
 alias glf='BRANCH=${1:-$(git branch | grep "*" | cut -c3-)}; git pull origin +$BRANCH:$BRANCH'
@@ -69,9 +71,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [ -f ~/.figureeightrc ]; then
-  source ~/.figureeightrc;
+    source ~/.figureeightrc;
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/gbiesiadecki/.sdkman"
 [[ -s "/Users/gbiesiadecki/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/gbiesiadecki/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
