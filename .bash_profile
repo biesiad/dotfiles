@@ -1,3 +1,5 @@
+stty -ixon
+
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/Projects/bin/:$PATH"
@@ -8,10 +10,11 @@ if [[ $(command -v rbenv) ]]; then eval "$(rbenv init -)"; fi
 export EDITOR=emacs
 export GIT_EDITOR=emacs
 export GIT_CEILING_DIRECTORIES=$HOME
+export HISTSIZE=1000
 
 if [[ $0 == '-bash' ]]; then
     if [[ -f /usr/local/etc/bash_completion.d/pass ]]; then . /usr/local/etc/bash_completion.d/pass; fi
-    
+
     . ~/.git-completion.bash
     . ~/.git_prompt.sh
 
@@ -50,16 +53,8 @@ grm () {
     done
 }
 
-alias dcu="docker-compose up"
-alias dce="docker-compose exec"
-alias dcr="docker-compose run --rm"
-alias dcd="docker-compose down"
-alias dcb="docker-compose build"
-alias dcd="docker-compose run"
+alias dc="docker-compose"
 alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm -f"
-alias dsc="docker-sync clean"
-alias dst="docker-sync start --foreground"
-alias dss="docker-sync stop"
 
 alias httpserver="ruby -run -ehttpd . -p8000"
 alias ppjson="python -m json.tool | highlight"

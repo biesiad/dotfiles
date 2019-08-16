@@ -19,10 +19,25 @@
     "prettier.printWidth": 80,
     "python.pythonPath": "/usr/local/bin/python",
     "prettier.singleQuote": true,
-    "prettier.eslintIntegration": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "tslint.alwaysShowRuleFailuresAsWarnings": false,
+    "javascript.format.enable": false,
+    "prettier.arrowParens": "always",
+    "breadcrumbs.enabled": false
 }
