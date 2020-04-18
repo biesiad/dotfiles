@@ -43,15 +43,6 @@ alias grh="git reset --hard"
 alias gcm="git checkout master"
 alias grh="git reset --hard"
 alias gmaster="git checkout master"
-grm () {
-    for branch in $(git branch | grep -v "*" | grep -v "master" | grep -v "sandbox"); do
-        echo -n "Delete $branch? [y/N] "
-        read answer
-        if [[ $answer == 'y' ]]; then
-            git branch -D $branch
-        fi
-    done
-}
 
 alias dc="docker-compose"
 alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm -f"
