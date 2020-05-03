@@ -38,7 +38,6 @@ gcof () {
     git checkout $(git branch | fzf --height=7 --query=$1 --layout=reverse --inline-info)
 }
 alias gcl='git clean -f `git rev-parse --show-toplevel`'
-
 alias dc="docker-compose"
 alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm -f"
 
