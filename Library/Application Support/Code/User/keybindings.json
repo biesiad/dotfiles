@@ -67,5 +67,19 @@
   {
     "key": "cmd+r",
     "command": "clojureVSCode.evalAndShowResult"
+  },
+  {
+    "key": "alt+. alt+",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "alt+.",
+    "command": "editor.action.revealDefinition"
   }
 ]

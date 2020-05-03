@@ -28,16 +28,30 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[javascriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "tslint.alwaysShowRuleFailuresAsWarnings": false,
     "javascript.format.enable": false,
     "prettier.arrowParens": "always",
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.jsxSingleQuote": true,
+    "arduino.additionalUrls": [
+        "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+    ],
+    "workbench.colorCustomizations": {
+        "editorWarning.foreground": "#555",
+        "editorInfo.foreground": "#0000ff",
+        "editorError.foreground": "#faa"
+    },
+    "outline.problems.colors": true,
+    "outline.problems.enabled": true
 }
