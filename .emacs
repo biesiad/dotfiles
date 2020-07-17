@@ -25,7 +25,7 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rainbow-delimiters gnuplot-mode color-theme color-theme-modern slime))))
+    (tabbar rainbow-delimiters gnuplot-mode color-theme color-theme-modern slime))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,6 +35,7 @@ There are two things you can do about this warning:
 
 (ido-mode 1)
 (show-paren-mode 1)
+(visual-line-mode 1)
 
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 ;; (setq inferior-lisp-program "/Users/gbiesiadecki/Downloads/ccl/dx86cl64")
