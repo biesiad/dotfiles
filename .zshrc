@@ -38,7 +38,7 @@ alias gst="git status"
 alias gco='git checkout'
 alias gcl='git clean -f `git rev-parse --show-toplevel`'
 alias gc="git commit --no-verify"
-alias glf='git pull origin +$(git branch | awk "/^\*/ { print $2 }"):$(git branch | awk "/^\*/ { print $2 }")'
+alias glf="git pull origin +$(git branch | awk '/^\*/ { print $2 }'):$(git branch | awk '/^\*/ { print $2 }')"
 
 alias dc="docker-compose"
 alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm -f"
