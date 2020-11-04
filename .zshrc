@@ -25,8 +25,13 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if [[ $(command -v rbenv) ]]; then eval "$(rbenv init -)"; fi
 
-function get_current_branch {
-  git branch | awk '/^\*/ { print $2 }'
+function get_current_branch () {
+    git branch | awk '/^\*/ { print $2 }'
+}
+
+function glf () {
+    branch=$(git branch | awk '/^\*/ { print $2 }')
+    git pull origin +$branch:$branch
 }
 
 alias ll="ls -l"
@@ -42,7 +47,6 @@ alias gst="git status"
 alias gco='git checkout'
 alias gcl='git clean -f `git rev-parse --show-toplevel`'
 alias gc="git commit --no-verify"
-alias glf="git pull origin +get_current_branch:get_current_branch"
 
 alias dc="docker-compose"
 alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm -f"
@@ -52,7 +56,7 @@ alias yt="yarn test"
 alias ylf="yarn lint --fix"
 alias httpserver="ruby -run -ehttpd . -p8000"
 alias e="emacs"
-alias ooo='emacs ~/Notes/appen/1on1/$(ls ~/Notes/appen/1on1 | fzf)'
+alias ooo='emacs ~/Notes/appen/1on1/$(ls ~/Notes/appen/1on1 | fzf -i)'
 alias jira='open https://appen.atlassian.net/browse/get_current_branch'
 alias cdtmp="cd ~/tmp"
 
