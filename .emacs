@@ -8,6 +8,21 @@
 (setq slime-contribs '(slime-fancy))
 
 (global-set-key (kbd "C-j") 'backward-kill-word)
+(global-set-key (kbd "C-t") 'fzf-git-files)
+
+(global-set-key (kbd "<M-return>") 'yafolding-toggle-element)
+(define-key yafolding-mode-map (kbd "<M-RET>") 'yafolding-toggle-element)
+
+(defvar yafolding-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "<C-S-return>") #'yafolding-hide-parent-element)
+    (define-key map (kbd "<C-M-return>") #'yafolding-toggle-all)
+    (define-key map (kbd "<C-return>") #'yafolding-toggle-element)
+    map))
+
+(setq frame-title-format
+      (list (format "%s %%S: %%j " (system-name))
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 
 (require 'package)
@@ -26,7 +41,7 @@
  '(custom-safe-themes
    '("77515a438dc348e9d32310c070bfdddc5605efc83671a159b223e89044e4c4f1" default))
  '(package-selected-packages
-   '(fzf helm whitespace-cleanup-mode tabbar rainbow-delimiters gnuplot-mode color-theme color-theme-modern slime)))
+   '(yafolding rspec-mode fzf helm whitespace-cleanup-mode tabbar rainbow-delimiters gnuplot-mode color-theme color-theme-modern slime)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
