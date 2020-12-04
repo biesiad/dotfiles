@@ -25,15 +25,6 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if [[ $(command -v rbenv) ]]; then eval "$(rbenv init -)"; fi
 
-function get_current_branch () {
-    git branch | awk '/^\*/ { print $2 }'
-}
-
-function glf () {
-    branch=$(git branch | awk '/^\*/ { print $2 }')
-    git pull origin +$branch:$branch
-}
-
 alias ll="ls -l"
 alias la="ls -a"
 alias l="ll"
@@ -43,10 +34,22 @@ alias rr="bundle exec rake routes"
 alias be="bundle exec"
 alias bi="bundle install"
 
+function get_current_branch () {
+    git branch | awk '/^\*/ { print $2 }'
+}
+
+function glf () {
+    branch=$(git branch | awk '/^\*/ { print $2 }')
+    git pull origin +$branch:$branch
+}
+
 alias gst="git status"
 alias gco='git checkout'
+alias gcos='git checkout sandbox'
+alias gcom='git checkout master'
 alias gcl='git clean -f `git rev-parse --show-toplevel`'
 alias gc="git commit --no-verify"
+alias gcp="git cherry-pick"
 
 alias dc="docker-compose"
 alias drm="docker ps -a | tail +2 | awk '{ print $1 }' | uniq | xargs docker rm -f"

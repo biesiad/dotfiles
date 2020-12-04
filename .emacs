@@ -11,15 +11,9 @@
 (global-set-key (kbd "C-j") 'backward-kill-word)
 (global-set-key (kbd "C-t") 'fzf-git-files)
 
-(global-set-key (kbd "<M-return>") 'yafolding-toggle-element)
-(define-key yafolding-mode-map (kbd "<M-RET>") 'yafolding-toggle-element)
-
-(defvar yafolding-mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "<C-S-return>") #'yafolding-hide-parent-element)
-    (define-key map (kbd "<C-M-return>") #'yafolding-toggle-all)
-    (define-key map (kbd "<C-return>") #'yafolding-toggle-element)
-    map))
+(global-set-key (kbd "M-RET") 'hs-toggle-hiding)
+(global-set-key (kbd "M-p") 'fzf-git-files)
+(global-set-key (kbd "M-F") 'fzf-git-grep)		
 
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
@@ -47,7 +41,7 @@
  '(custom-safe-themes
    '("77515a438dc348e9d32310c070bfdddc5605efc83671a159b223e89044e4c4f1" default))
  '(package-selected-packages
-   '(yafolding rspec-mode fzf helm whitespace-cleanup-mode tabbar rainbow-delimiters gnuplot-mode color-theme color-theme-modern slime)))
+   '(fzf rainbow-delimiters slime)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

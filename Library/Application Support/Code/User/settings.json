@@ -3,7 +3,7 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
     "workbench.sideBar.location": "right",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
