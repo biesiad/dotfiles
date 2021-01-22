@@ -1,5 +1,7 @@
 # stty -ixon
 
+setopt noflowcontrol
+
 source /usr/share/zsh-antigen/antigen.zsh 2&> /dev/null
 source /usr/local/share/antigen/antigen.zsh 2&> /dev/null
 source /usr/local/share/antigen.zsh 2&> /dev/null
@@ -18,11 +20,13 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
 if [[ $(command -v rbenv) ]]; then eval "$(rbenv init -)"; fi
 
 alias ll="ls -l"
